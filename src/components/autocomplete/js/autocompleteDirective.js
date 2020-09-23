@@ -336,7 +336,8 @@ function MdAutocomplete ($$mdSvgRegistry) {
       dropdownPosition:   '@?mdDropdownPosition',
       clearButton:        '=?mdClearButton',
       selectedMessage:    '@?mdSelectedMessage',
-      mdMode: '=?mdMode'
+      mdMode: '=?mdMode',
+      disableBodyScrollDisable : '=?mdDisableBodyScrollDisable'
     },
     compile: function(tElement, tAttrs) {
       var attributes = ['md-select-on-focus', 'md-no-asterisk', 'ng-trim', 'ng-pattern'];

@@ -95,6 +95,7 @@ function MdAutocompleteCtrl ($scope, $element, $mdUtil, $mdConstant, $mdTheming,
       selectedItem: null,
       clearButton: false,
       disableVirtualRepeat: false,
+      disableBodyScrollDisable: false
     });
 
     $mdTheming($element);
@@ -404,7 +405,9 @@ function MdAutocompleteCtrl ($scope, $element, $mdUtil, $mdConstant, $mdTheming,
       reportMessages(true, ReportType.Count | ReportType.Selected);
 
       if (elements) {
-        $mdUtil.disableScrollAround(elements.scrollContainer);
+	    if (!disableBodyScrollDisable) {
+            $mdUtil.disableScrollAround(elements.scrollContainer);
+        }
         enableWrapScroll = disableElementScrollEvents(elements.wrap);
         if ($mdUtil.isIos) {
           ctrl.documentElement.on('touchend', handleTouchOutsidePanel);
