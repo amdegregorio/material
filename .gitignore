@@ -6,3 +6,6 @@ dist
 tmp/
 bower-material/
 code.material.angularjs.org/
+.project
+.settings/
+/package-lock.json

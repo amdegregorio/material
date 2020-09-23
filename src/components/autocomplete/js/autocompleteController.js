@@ -405,7 +405,7 @@ function MdAutocompleteCtrl ($scope, $element, $mdUtil, $mdConstant, $mdTheming,
       reportMessages(true, ReportType.Count | ReportType.Selected);
 
       if (elements) {
-	    if (!disableBodyScrollDisable) {
+	    if (!$scope.disableBodyScrollDisable) {
             $mdUtil.disableScrollAround(elements.scrollContainer);
         }
         enableWrapScroll = disableElementScrollEvents(elements.wrap);
@@ -428,7 +428,9 @@ function MdAutocompleteCtrl ($scope, $element, $mdUtil, $mdConstant, $mdTheming,
           scrollContainerElement.off('touchstart touchmove touchend', stopPropagation);
         }
       }
-      $mdUtil.enableScrolling();
+      if (!$scope.disableBodyScrollDisable) {
+          $mdUtil.enableScrolling();
+      }
 
       if (enableWrapScroll) {
         enableWrapScroll();
